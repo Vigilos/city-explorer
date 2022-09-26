@@ -23,7 +23,7 @@ class SearchBar extends React.Component {
     const api = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&q=${this.state.searchText}&format=json`;
     const searchResponse = await axios.get(api);
     this.setState({ searchLocation: searchResponse.data[0] });
-    const waitToDisplayMap = setTimeout(e => {
+    setTimeout(e => {
       this.setState({
         map: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${this.state.searchLocation.lat},${this.state.searchLocation.lon}&zoom=10`,
       });
