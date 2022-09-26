@@ -1,0 +1,15 @@
+#results {
+  background-color: #ead9c4;
+}
+
+#city-result {
+  padding: 20px;
+}
+h2 {
+  font-size: large;
+}
+#map {
+  margin-left: 20px;
+  width: 30%;
+  border: 2px solid black;
+}
