@@ -1,3 +1,9 @@
 #form {
   background-color: #e0932e;
 }
+#error {
+  background-color: #e0932e;
+  color: red;
+  font-weight: bold;
+  padding: 3px 0px 5px 10px;
+}

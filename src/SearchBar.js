@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Alert from 'react-bootstrap/Alert';
 import DisplayResults from './DisplayResults';
 
 class SearchBar extends React.Component {
@@ -16,18 +17,27 @@ class SearchBar extends React.Component {
       searchText: '',
       searchLocation: {},
       map: '',
+      errorOccur: [false, ''],
+      setShow: false,
     };
   }
 
   doSearch = async () => {
-    const api = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&q=${this.state.searchText}&format=json`;
-    const searchResponse = await axios.get(api);
-    this.setState({ searchLocation: searchResponse.data[0] });
-    setTimeout(e => {
+    try {
+      const api = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&q=${this.state.searchText}&format=json`;
+      const searchResponse = await axios.get(api);
+      this.setState({ searchLocation: searchResponse.data[0] });
+      setTimeout(e => {
+        this.setState({
+          map: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${this.state.searchLocation.lat},${this.state.searchLocation.lon}&zoom=10`,
+        });
+      }, 0);
+    } catch (error) {
       this.setState({
-        map: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${this.state.searchLocation.lat},${this.state.searchLocation.lon}&zoom=10`,
+        errorOccur: [true, `CODE: ${error.code} - MSG: ${error.message}`],
       });
-    }, 0);
+      this.setState({ setShow: true });
+    }
   };
 
   render() {
@@ -58,6 +68,12 @@ class SearchBar extends React.Component {
           </Form>
         </div>
 
+        {
+          <Alert show={this.state.setShow} variant="danger">
+            <Alert.Heading>An error has occurred!</Alert.Heading>
+            <p>{this.state.errorOccur[1]}</p>
+          </Alert>
+        }
         {this.state.searchLocation.display_name && (
           <>
             <DisplayResults
