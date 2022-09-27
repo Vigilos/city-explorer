@@ -30,5 +30,5 @@ Mehtab Riar - Worked with Mehtab on initial http request process flowchart.
 Name of feature: Initial setup and code to access APIs
 Estimate of time needed to complete: 2.5 hours
 Start time: 14:30
-Finish time:
-Actual time needed to complete:
+Finish time: 17:30
+Actual time needed to complete: 3 hours
