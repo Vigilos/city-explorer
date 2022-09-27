@@ -32,6 +32,7 @@ class SearchBar extends React.Component {
           map: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${this.state.searchLocation.lat},${this.state.searchLocation.lon}&zoom=10`,
         });
       }, 0);
+      this.setState({ setShow: false });
     } catch (error) {
       this.setState({
         errorOccur: [true, `CODE: ${error.code} - MSG: ${error.message}`],
@@ -69,7 +70,7 @@ class SearchBar extends React.Component {
         </div>
 
         {
-          <Alert show={this.state.setShow} variant="danger">
+          <Alert className="mb-0" show={this.state.setShow} variant="danger">
             <Alert.Heading>An error has occurred!</Alert.Heading>
             <p>{this.state.errorOccur[1]}</p>
           </Alert>
