@@ -34,7 +34,7 @@ class DisplayResults extends React.Component {
             </Card>
           </div>
           <div id="map">
-            <Image className="img-fluid border" src={this.props.map} rounded />
+            <Image className="img-fluid" src={this.props.map} rounded />
           </div>
         </div>
       </div>
