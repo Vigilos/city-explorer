@@ -35,5 +35,5 @@ Mehtab Riar - Worked with Mehtab on initial http request process flowchart.
 2. Name of feature: Add weather to page
    Estimate of time needed to complete: 1 hour
    Start time: 17:30
-   Finish time:
-   Actual time needed to complete:
+   Finish time: 19:00
+   Actual time needed to complete: 1.5 hours
