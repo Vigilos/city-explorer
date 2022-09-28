@@ -19,19 +19,26 @@ class SearchBar extends React.Component {
       map: '',
       errorOccur: [false, ''],
       setShow: false,
+      weather: [{ date: '1234', description: 'test' }],
     };
   }
 
   doSearch = async () => {
     try {
-      const api = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&q=${this.state.searchText}&format=json`;
+      // Set API for city search
+      let api = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&q=${this.state.searchText}&format=json`;
       const searchResponse = await axios.get(api);
       this.setState({ searchLocation: searchResponse.data[0] });
+
+      // Delay to ensure searchLocation state is set
       setTimeout(e => {
+        // Retrieve map for selected city
         this.setState({
           map: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${this.state.searchLocation.lat},${this.state.searchLocation.lon}&zoom=10`,
         });
+        this.weatherSearch();
       }, 0);
+
       this.setState({ setShow: false });
     } catch (error) {
       this.setState({
@@ -39,6 +46,13 @@ class SearchBar extends React.Component {
       });
       this.setState({ setShow: true });
     }
+  };
+
+  weatherSearch = async () => {
+    // set API for and retrieve weather
+    const api = `http://localhost:3001/weather?searchQuery=${this.state.searchText}&lat=${this.state.searchLocation.lat}&lon=${this.state.searchLocation.lon}`;
+    const weatherResponse = await axios.get(api);
+    this.setState({ weather: weatherResponse.data });
   };
 
   render() {
@@ -80,6 +94,7 @@ class SearchBar extends React.Component {
             <DisplayResults
               searchLocation={this.state.searchLocation}
               map={this.state.map}
+              weather={this.state.weather}
             />
           </>
         )}
