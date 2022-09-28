@@ -13,3 +13,14 @@ h2 {
   width: 30%;
   border: 2px solid black;
 }
+#weather p {
+  margin-bottom: 0px;
+}
+#weather {
+  margin-left: 20px;
+
+  margin-bottom: 40px;
+}
+#weather-map {
+  display: flex;
+}

@@ -27,8 +27,13 @@ Mehtab Riar - Worked with Mehtab on initial http request process flowchart.
 
 ## Feature Addition Tracking
 
-Name of feature: Initial setup and code to access APIs
-Estimate of time needed to complete: 2.5 hours
-Start time: 14:30
-Finish time: 17:30
-Actual time needed to complete: 3 hours
+1. Name of feature: Initial setup and code to access APIs
+   Estimate of time needed to complete: 2.5 hours
+   Start time: 14:30
+   Finish time: 17:30
+   Actual time needed to complete: 3 hours
+2. Name of feature: Add weather to page
+   Estimate of time needed to complete: 1 hour
+   Start time: 17:30
+   Finish time:
+   Actual time needed to complete:
