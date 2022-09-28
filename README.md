@@ -1,7 +1,7 @@
 # City Explorer
 
 **Author**: Chris Fanucchi
-**Version**: 1.0.0
+**Version**: 1.3.0
 
 ## Overview
 
@@ -16,6 +16,8 @@ This app can be copied and used locally, but requires a LocationIQ token key for
 This app uses JavaScript, React, Axios and API calls to Location IQ.
 
 ![API data flow](city-explorer-dataflow.png)
+![API data flow](server-comms.png)
+![API data flow](dataflow-lab-8.png)
 
 ## Change Log
 
@@ -23,7 +25,7 @@ This app uses JavaScript, React, Axios and API calls to Location IQ.
 
 ## Credit and Collaborations
 
-Mehtab Riar - Worked with Mehtab on initial http request process flowchart.
+Worked with Mehtab Riar, Erik Dobb, and Ian Forrester on http request cycle process diagrams.
 
 ## Feature Addition Tracking
 
@@ -32,8 +34,15 @@ Mehtab Riar - Worked with Mehtab on initial http request process flowchart.
    Start time: 14:30
    Finish time: 17:30
    Actual time needed to complete: 3 hours
+
 2. Name of feature: Add weather to page
    Estimate of time needed to complete: 1 hour
    Start time: 17:30
    Finish time: 19:00
    Actual time needed to complete: 1.5 hours
+
+3. Name of feature: Reconfigure weather display for new data
+   Estimate of time needed to complete: 1.5 hour
+   Start time:
+   Finish time:
+   Actual time needed to complete:
