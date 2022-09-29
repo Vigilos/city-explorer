@@ -4,7 +4,6 @@ import './DisplayResults.css';
 import Image from 'react-bootstrap/Image';
 import Weather from './Weather';
 import Movies from './Movies';
-import Card from 'react-bootstrap/Card';
 
 class DisplayResults extends React.Component {
   render() {
@@ -19,31 +18,10 @@ class DisplayResults extends React.Component {
         </div>
         <div id="weather-map">
           <div id="weather">
-            <Card style={{ width: '18rem' }}>
-              <Card.Body>
-                <Card.Title className="mb-2">Weather Forecast</Card.Title>
-                {this.props.weather.map((e, i) => {
-                  return (
-                    <Weather
-                      key={i}
-                      date={e.date}
-                      description={e.description}
-                    />
-                  );
-                })}
-              </Card.Body>
-            </Card>
+            <Weather weather={this.props.weather} />
           </div>
           <div id="movies">
-            <Card style={{ width: '18rem' }}>
-              <Card.Body>
-                <Card.Title className="mb-2">Area Movies</Card.Title>
-
-                {this.props.movies.map((e, i) => {
-                  return <Movies key={i} movie={e} />;
-                })}
-              </Card.Body>
-            </Card>
+            <Movies movies={this.props.movies} />
           </div>
           <div id="map">
             <Image className="img-fluid" src={this.props.map} rounded />

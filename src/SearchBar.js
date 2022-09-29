@@ -15,6 +15,7 @@ class SearchBar extends React.Component {
     super(props);
     this.state = {
       serverUrl: 'https://city-explorador.herokuapp.com',
+      // serverUrl: 'http://localhost:3001',
       searchText: '',
       searchLocation: {},
       map: '',
