@@ -1,7 +1,7 @@
 # City Explorer
 
 **Author**: Chris Fanucchi
-**Version**: 1.3.0
+**Version**: 1.4.1
 
 ## Overview
 
@@ -46,3 +46,9 @@ Worked with Mehtab Riar, Erik Dobb, and Ian Forrester on http request cycle proc
    Start time: 17:00
    Finish time: 18:30
    Actual time needed to complete: 1.5 hours
+
+4. Name of feature: Componentize weather and movies displays
+   Estimate of time needed to complete: 0.5
+   Start time: 13:15
+   Finish time: 18:40
+   Actual time needed to complete: ~0.5 hours

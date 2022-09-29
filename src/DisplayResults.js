@@ -4,7 +4,6 @@ import './DisplayResults.css';
 import Image from 'react-bootstrap/Image';
 import Weather from './Weather';
 import Movies from './Movies';
-import Card from 'react-bootstrap/Card';
 
 class DisplayResults extends React.Component {
   render() {
