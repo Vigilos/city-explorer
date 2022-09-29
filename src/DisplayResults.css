@@ -22,4 +22,8 @@ h2 {
 }
 #weather-map {
   display: flex;
+  flex-wrap: wrap;
+}
+#movies {
+  margin-left: 20px;
 }

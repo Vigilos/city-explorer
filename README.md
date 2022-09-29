@@ -43,6 +43,6 @@ Worked with Mehtab Riar, Erik Dobb, and Ian Forrester on http request cycle proc
 
 3. Name of feature: Reconfigure weather display for new data
    Estimate of time needed to complete: 1.5 hour
-   Start time:
-   Finish time:
-   Actual time needed to complete:
+   Start time: 17:00
+   Finish time: 18:30
+   Actual time needed to complete: 1.5 hours
