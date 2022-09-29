@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './DisplayResults.css';
 import Image from 'react-bootstrap/Image';
 import Weather from './Weather';
+import Movies from './Movies';
 import Card from 'react-bootstrap/Card';
 
 class DisplayResults extends React.Component {
@@ -20,7 +21,7 @@ class DisplayResults extends React.Component {
           <div id="weather">
             <Card style={{ width: '18rem' }}>
               <Card.Body>
-                <Card.Subtitle className="mb-2">Weather Forecast</Card.Subtitle>
+                <Card.Title className="mb-2">Weather Forecast</Card.Title>
                 {this.props.weather.map((e, i) => {
                   return (
                     <Weather
@@ -29,6 +30,17 @@ class DisplayResults extends React.Component {
                       description={e.description}
                     />
                   );
+                })}
+              </Card.Body>
+            </Card>
+          </div>
+          <div id="movies">
+            <Card style={{ width: '18rem' }}>
+              <Card.Body>
+                <Card.Title className="mb-2">Area Movies</Card.Title>
+
+                {this.props.movies.map((e, i) => {
+                  return <Movies key={i} movie={e} />;
                 })}
               </Card.Body>
             </Card>

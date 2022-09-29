@@ -14,12 +14,14 @@ class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      serverUrl: 'https://city-explorador.herokuapp.com',
       searchText: '',
       searchLocation: {},
       map: '',
       errorOccur: [false, ''],
       setShow: false,
-      weather: [{ date: '1234', description: 'test' }],
+      weather: [],
+      movies: [],
     };
   }
 
@@ -37,6 +39,7 @@ class SearchBar extends React.Component {
           map: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${this.state.searchLocation.lat},${this.state.searchLocation.lon}&zoom=10`,
         });
         this.weatherSearch();
+        this.movieSearch();
       }, 0);
 
       this.setState({ setShow: false });
@@ -50,9 +53,16 @@ class SearchBar extends React.Component {
 
   weatherSearch = async () => {
     // set API for and retrieve weather
-    const api = `http://localhost:3001/weather?searchQuery=${this.state.searchText}&lat=${this.state.searchLocation.lat}&lon=${this.state.searchLocation.lon}`;
+    const api = `${this.state.serverUrl}/weather?searchQuery=${this.state.searchText}&lat=${this.state.searchLocation.lat}&lon=${this.state.searchLocation.lon}`;
     const weatherResponse = await axios.get(api);
     this.setState({ weather: weatherResponse.data });
+  };
+
+  movieSearch = async () => {
+    // set API for and retrieve movies
+    const api = `${this.state.serverUrl}/movies?searchQuery=${this.state.searchText}`;
+    const moviesResponse = await axios.get(api);
+    this.setState({ movies: moviesResponse.data });
   };
 
   render() {
@@ -95,6 +105,7 @@ class SearchBar extends React.Component {
               searchLocation={this.state.searchLocation}
               map={this.state.map}
               weather={this.state.weather}
+              movies={this.state.movies}
             />
           </>
         )}
