@@ -18,6 +18,7 @@ This app uses JavaScript, React, Axios and API calls to Location IQ.
 ![API data flow](city-explorer-dataflow.png)
 ![API data flow](server-comms.png)
 ![API data flow](dataflow-lab-8.png)
+![API data flow with cache](server-comms-with-cache.png)
 
 ## Change Log
 
