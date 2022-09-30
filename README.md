@@ -1,7 +1,7 @@
 # City Explorer
 
 **Author**: Chris Fanucchi
-**Version**: 1.5.0
+**Version**: 1.5.1
 
 ## Overview
 
@@ -27,6 +27,7 @@ This app uses JavaScript, React, Axios and API calls to Location IQ.
 09-28-2022 18:00 - Reconfigured how weather is displayed and added movies on page.
 09-29-2022 18:45 - Further componentize weather and movies displays.
 09-30-2022 15:30 - Added last weather acquired date to page.
+09-30-2022 16:13 - Fixed bug: moved weather time/date to every WeatherDay.
 
 ## Credit and Collaborations
 
