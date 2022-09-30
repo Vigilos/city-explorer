@@ -9,6 +9,9 @@ class Weather extends React.Component {
       <Card style={{ width: '18rem' }}>
         <Card.Body>
           <Card.Title className="mb-2">Weather Forecast</Card.Title>
+          <Card.Subtitle className="mb-3">
+            {this.props.weather[0].timeStamp}
+          </Card.Subtitle>
           {this.props.weather.map((e, i) => {
             return (
               <WeatherDay key={i} date={e.date} description={e.description} />
